@@ -11,7 +11,7 @@ This project is a complete end-to-end Machine Learning application that predicts
 
 ## 🛠️ Technology Stack
 
--   **Frameowrk**: [Streamlit](https://streamlit.io/)
+-   **Framework**: [Streamlit](https://streamlit.io/)
 -   **Deep Learning**: [TensorFlow](https://www.tensorflow.org/) / [Keras](https://keras.io/)
 -   **Data Manipulation**: [Pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/)
 -   **Machine Learning Utilities**: [Scikit-learn](https://scikit-learn.org/)
@@ -19,16 +19,19 @@ This project is a complete end-to-end Machine Learning application that predicts
 
 ## 📂 Project Structure
 
-```text
 ├── .venv/                      # Virtual environment
 ├── Churn_Modelling.csv          # The dataset used for training
 ├── app.py                      # Main Streamlit application
-├── experiments.ipynb           # Notebook for model training & experiments
+├── experiments.ipynb           # Notebook for Churn Model training & experiments
+├── hyperparameterTuningANN.ipynb # Notebook for ANN Hyperparameter Tuning
 ├── prediction.ipynb            # Notebook for testing predictions
-├── model.h5                    # Trained ANN model (Keras format)
+├── salaryregression.ipynb      # Notebook for Salary Estimation Regression
+├── model.h5                    # Trained Churn Prediction Model
+├── regression_model.h5         # Trained Salary Regression Model
 ├── label_encoder_gender.pkl    # Serialized label encoder for Gender
 ├── onehot_encoder_geo.pkl      # Serialized one-hot encoder for Geography
 ├── scaler.pkl                  # Serialized standard scaler
+├── tensorboard_logs/           # Logs for TensorBoard visualization
 ├── requirements.txt            # Project dependencies
 └── README.md                   # Project documentation
 ```
@@ -82,4 +85,15 @@ The ANN model was trained using:
 -   Hidden layers with ReLU activation.
 -   An output layer with Sigmoid activation (for binary classification).
 -   Optimization using the **Adam** optimizer and **Binary Cross-Entropy** loss.
+
+## 🧪 Experiments & Other Models
+
+### Salary Estimator (Regression)
+The project also includes a regression model aimed at predicting a customer's `EstimatedSalary` based on their profile. This is currently in the experimental phase.
+-   **Notebook**: `salaryregression.ipynb`
+-   **Model**: `regression_model.h5`
+
+### Hyperparameter Tuning
+We use `GridSearchCV` with `scikeras` to find the optimal hyperparameters (layers, neurons, epochs) for our ANN models.
+-   **Notebook**: `hyperparameterTuningANN.ipynb`
 
